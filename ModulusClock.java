@@ -4,6 +4,8 @@ public class ModulusClock{
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
 		int hour, minute, changeHour, changeMinute, helpVar;
+		int minutesInHour = 60;
+		int hoursInTime = 12;
 
 		System.out.print("Current hour: ");
 		hour = scanner.nextInt();
@@ -15,11 +17,11 @@ public class ModulusClock{
 		changeMinute = scanner.nextInt();
 
 		minute += changeMinute;
-		helpVar = minute / 60;
-		minute = minute % 60;
+		helpVar = minute / minutesInHour;
+		minute = minute % minutesInHour;
 		changeHour += helpVar;
 		hour += changeHour;
-		hour = hour % 12;
+		hour = hour % hoursInTime;
 		if ( hour == 0){
 			hour = 12;
 		}
